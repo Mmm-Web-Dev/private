@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="login-box">
+    <h1>LOG<span class="highlight">IN</span></h1>
+    <form onsubmit="return validateLogin()">
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+      <label class="checkbox-container">
+        <input type="checkbox" onclick="togglePassword()"> Liat Password
+      </label>
+      <button type="submit">Masuk</button>
+    </form>
+  </div>
+
+  <div class="wave">
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+    <path d="M0.00,49.98 C150.00,150.00 349.38,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" 
+          style="stroke: none; fill: #ff00ff;">
+    </path>
+  </svg>
+</div>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === "tes" && password === "1111") {
+        window.location.href = "ultah.html";
+        return false;
+      } else {
+        alert("Username atau password salah!");
+        return false;
+      }
+    }
+
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>
